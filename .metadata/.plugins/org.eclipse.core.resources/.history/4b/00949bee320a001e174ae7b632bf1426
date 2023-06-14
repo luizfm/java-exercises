@@ -1,0 +1,48 @@
+package entities;
+
+public class BankAccount {
+	public static final double WITHDRAW_TAX = 5.00;
+	
+	private int accountNumber;
+	private String userName;
+	private double balance;
+	
+	public BankAccount(int accountNumber, String userName) {
+		this.accountNumber = accountNumber;
+		this.userName = userName;
+	}
+	
+	public BankAccount(int accountNumber, String userName, double initialDeposit) {
+		this.accountNumber = accountNumber;
+		this.userName = userName;
+		this.balance += initialDeposit;
+	}
+	
+	public int getAccountNumber() {
+		return this.accountNumber;
+	}
+	
+	public String getUserName() {
+		return this.userName;
+	}
+	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public double getBalance() {
+		return this.balance;
+	}
+	
+	public void deposit(double amount) {
+		if(amount != 0) {
+			this.balance += amount;
+		}
+	}
+	
+	public void withdraw(double amount) {
+		if(amount != 0) {
+			this.balance -= amount + WITHDRAW_TAX;
+		}
+	}
+}
