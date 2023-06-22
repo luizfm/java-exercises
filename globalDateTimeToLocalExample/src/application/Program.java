@@ -29,6 +29,6 @@ public class Program {
 		
 		System.out.println(d02.getHour());
 		System.out.println(d02.getMinute());
-;	}
+	}
 
 }

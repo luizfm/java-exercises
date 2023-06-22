@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Program {
 
@@ -28,6 +29,10 @@ public class Program {
 		
 		LocalDate d10 = LocalDate.of(2022, 7, 20);
 		LocalDateTime d11 = LocalDateTime.of(2022, 7, 20, 1, 30);
+		
+		Date x = new Date();
+		
+		System.out.println(x.toInstant());
 		
 		System.out.println(d01);
 		System.out.println(d02);
