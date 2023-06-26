@@ -8,36 +8,17 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		Account acc = new Account(1081, "Fatima", 500.00);
-
-		BusinessAccount businessAccount = new BusinessAccount(1080, "Alex Green", 500.00, 500.00);	
-
+		Account acc1 = new Account(1080, "Maria Brown", 1000.00);
+		Account acc2 = new SavingsAccount(1081, "Alex Green", 1000.00, 0.01);
+		Account acc3 = new BusinessAccount(1082, "Julia White", 1000.00, 500.00);
 		
-		// Upcasting
+		acc1.withdraw(100.00);
+		acc2.withdraw(100.00);
+		acc3.withdraw(100.00);
 		
-		Account acc2 = businessAccount;
-		Account acc3 = new BusinessAccount(1083, "Jorge", 500.00, 500.00);
-		Account acc4 = new SavingsAccount(1086, "Marcia", 500.00, 10.00);
-
-		
-		// DownCasting
-	
-		BusinessAccount acc5 = (BusinessAccount)acc3;
-		acc5.loan(100.00);
-		
+		System.out.println(acc1.getBalance());
+		System.out.println(acc2.getBalance());
 		System.out.println(acc3.getBalance());
-		
-		if(acc4 instanceof BusinessAccount) {
-			BusinessAccount bacc2 = (BusinessAccount)acc4;
-			bacc2.loan(200.00);
-			System.out.println("Loan done!");
-		}
-		
-		if(acc4 instanceof SavingsAccount) {
-			SavingsAccount sacc = (SavingsAccount)acc4;
-			sacc.updateBalance();
-			System.out.println("Updated");
-		}
 	}
 
 }

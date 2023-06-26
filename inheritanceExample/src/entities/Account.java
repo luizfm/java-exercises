@@ -1,6 +1,8 @@
 package entities;
 
 public class Account {
+	private static final double WITHDRAW_TAX = 5.00;
+	
 	private Integer number;
 	private String holder;
 	protected Double balance;
@@ -34,7 +36,7 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) {
-		this.balance -= amount;
+		this.balance -= amount + WITHDRAW_TAX;
 	}
 	
 }
